@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--< ++++++++++++ This code is For Inversion of Control (IoC) ++++++++++++++++>-->
+    <!--    < Below, Object of Airtel/Vodafone (class) will be created, named as airtel/vodafone(id) >-->
+    <bean id = "sim" class = "com.spring_core.IoC.Vodafone" ></bean>
+    <!--    <bean id = "vodafone" class = "com.spring_core.IoC.Vodafone" ></bean>-->
+
+<!--    <++++++++++++++++This code is for Dependency Injection (DI)++++++++++++++++>-->
+<!--    <Setter Must be there in Student(class) order to Inject the Value in Student Class>-->
+<!--    <///////////////Setter Method of Injecting ///////////>-->
+<!--    <bean id = "std" class = "com.spring_core.DI.Student">-->
+<!--        <property name="studName" value="Niyamat Barote" />-->
+<!--        <property name="rollNum" value="24" />-->
+<!--    </bean>-->
+<!--    <bean id = "mahemud" class = "com.spring_core.DI.Student">-->
+<!--        <property name="studName" value="Mahemud Borote" />-->
+<!--        <property name="rollNum" value="4" />-->
+<!--    </bean>-->
+<!--    </////////////// Constructor Method of Injecting /////////////////>-->
+    <bean id = "std" class = "com.spring_core.DI.Student">
+        <constructor-arg name="studName" value="Niyamat Barote"/>
+        <constructor-arg name="rollNum" value="12" />
+    </bean>
+    <bean id = "roll" class = "com.spring_core.DI.Student">
+        <constructor-arg name="rollNum" value="100" type="int"/>
+    </bean>
+    <bean id = "name" class = "com.spring_core.DI.Student">
+        <constructor-arg name="studName" value="Mahemud Borote"/>
+    </bean>
+
+</beans>
+
