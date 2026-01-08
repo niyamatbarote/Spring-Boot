@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="
-        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+
     <!--< ++++++++++++ This code is For Inversion of Control (IoC) ++++++++++++++++>-->
     <!--    < Below, Object of Airtel/Vodafone (class) will be created, named as airtel/vodafone(id) >-->
-    <bean id = "sim" class = "com.spring_core.IoC.Vodafone" ></bean>
+    <bean id = "sim" class = "com.spring_core.IoC.Vodafone" />
     <!--    <bean id = "vodafone" class = "com.spring_core.IoC.Vodafone" ></bean>-->
 
 <!--    <++++++++++++++++This code is for Dependency Injection (DI)++++++++++++++++>-->
@@ -34,6 +39,7 @@
 
 
 <!--    <++++++++++++++The Following code is for Dependency Injection (injecting Objects)++++++++++++ >-->
+<!--    <This will make object once and use as per needed (thus only one Constructor will be created) >-->
     <bean id = "commonChit" class="com.spring_core.DI.Injecting_Objects.MathChit"    />
 <!--    <Injecting into the Object>-->
     <bean id = "obj" class="com.spring_core.DI.Injecting_Objects.StudentCheat" >
@@ -55,5 +61,38 @@
     </bean>
 
 
+<!--    <++++++++++++++++This is For the Autowired Section++++++++++++++++++++>-->
+<!--    <Autowire By Name (Object Name && id MUST be same )>-->
+<!--    <bean id="myHeart" class="com.spring_core.Autowired.Heart"/>-->
+<!--    <bean id="hum" class="com.spring_core.Autowired.Human" autowire="byName"></bean>-->
+
+<!--<Autowire Be Type (class Name should be same_)>-->
+<!--    <bean id="abcdef" class="com.spring_core.Autowired.Heart"/>-->
+<!--    <bean id="hum" class="com.spring_core.Autowired.Human" autowire="byType"></bean>-->
+
+<!--    <NOTE** If we want to use (autowire="constructor") we need to make the constructor of that Obj>-->
+
+    <!--    <This will make the configuration work from java @Autowired to xml file>-->
+    <context:annotation-config />
+
+    <bean id="myHeart" class="com.spring_core.Autowired.Heart">
+        <property name="nameOfAnimal" value="Human"/>
+        <property name="numOfHearts" value="1"/>
+    </bean>
+
+    <bean id="octopusHeart" class="com.spring_core.Autowired.Heart">
+        <property name="nameOfAnimal" value="Octopus"/>
+        <property name="numOfHearts" value="3"/>
+    </bean>
+
+    <bean id="hum" class="com.spring_core.Autowired.Human" />
+
+
 </beans>
+
+
+
+
+
+
 
