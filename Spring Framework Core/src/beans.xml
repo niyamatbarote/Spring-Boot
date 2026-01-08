@@ -28,8 +28,33 @@
         <constructor-arg name="rollNum" value="100" type="int"/>
     </bean>
     <bean id = "name" class = "com.spring_core.DI.Student">
-        <constructor-arg name="studName" value="Mahemud Borote"/>
+        <constructor-arg name="studName" value="Mahemud Borote" type="java.lang.String"/>
     </bean>
+
+
+
+<!--    <++++++++++++++The Following code is for Dependency Injection (injecting Objects)++++++++++++ >-->
+<!--    <This will make object once and use as per needed (thus only one Constructor will be created) >-->
+    <bean id = "commonChit" class="com.spring_core.DI.Injecting_Objects.MathChit"    />
+<!--    <Injecting into the Object>-->
+    <bean id = "obj" class="com.spring_core.DI.Injecting_Objects.StudentCheat" >
+<!--        <Injecting for myChit Obj>-->
+        <property name="myChit" ref="commonChit"/>
+<!--        <Injecting for id integer>-->
+        <property name="id" value="1001"/>
+    </bean>
+
+<!--    <For Student2>-->
+    <bean id="stud2" class="com.spring_core.DI.Injecting_Objects.Student2">
+<!--        <This method makes us to make the objects again and again>-->
+<!--        <property name="myChit">-->
+<!--            <bean class="com.spring_core.DI.Injecting_Objects.MathChit"/>-->
+<!--        </property>-->
+
+<!--        <Standard (Latest method to do it)>-->
+        <property name="myChit" ref="commonChit"/>
+    </bean>
+
 
 </beans>
 
