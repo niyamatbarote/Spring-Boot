@@ -88,6 +88,17 @@
     <bean id="hum" class="com.spring_core.Autowired.Human" />
 
 
+
+<!--    <++++++++++++++This Code for the PROPERTIES FILE +++++++++++++++++++ >-->
+    <context:property-placeholder location="myStudent.property"/>
+
+    <bean id="niyamat" class="com.spring_core.propertiesFile.MyStudent">
+<!--        <If we Don't Want to Inject Values Like This we use @Value '>-->
+<!--        <property name="name" value="${stud.name}"/>-->
+<!--        <property name="course" value="${stud.course}"/>-->
+<!--        <property name="hobby" value="${stud.hobby}"/>-->
+    </bean>
+
 </beans>
 
 
