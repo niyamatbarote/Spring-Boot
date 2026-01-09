@@ -73,6 +73,7 @@
 <!--    <NOTE** If we want to use (autowire="constructor") we need to make the constructor of that Obj>-->
 
     <!--    <This will make the configuration work from java @Autowired to xml file>-->
+    <!--    <MUST Use This While WE Use ANy @ ANNOTATIONS >-->
     <context:annotation-config />
 
     <bean id="myHeart" class="com.spring_core.Autowired.Heart">
@@ -90,6 +91,8 @@
 
 
 <!--    <++++++++++++++This Code for the PROPERTIES FILE +++++++++++++++++++ >-->
+
+<!--    < Configuring the myStudent.propery file >-->
     <context:property-placeholder location="myStudent.property"/>
 
     <bean id="niyamat" class="com.spring_core.propertiesFile.MyStudent">
