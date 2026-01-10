@@ -11,7 +11,7 @@ public class Client {
 //        ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
 
         ApplicationContext context = new AnnotationConfigApplicationContext("com.spring_core.Component");
-        College clg = context.getBean("clgBean" , College.class);
+        College clg = context.getBean("college" , College.class);
 
         System.out.println(clg);
         clg.clgDetails();

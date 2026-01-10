@@ -106,6 +106,7 @@
 
 <!--    <+++++++++++++++ This Code is For Using Component Annotation++++++++++++++++>-->
 
+<!--    <We are Not Using Any XML File In This While we Use Component Annotation>-->
 <!--    <Without Using Below COnfig line we can perfom configuration using the java only>-->
 <!--    <context:component-scan base-package="com.spring_core.Component"/>-->
 
