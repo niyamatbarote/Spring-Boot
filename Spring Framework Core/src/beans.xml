@@ -96,11 +96,19 @@
     <context:property-placeholder location="myStudent.property"/>
 
     <bean id="niyamat" class="com.spring_core.propertiesFile.MyStudent">
-<!--        <If we Don't Want to Inject Values Like This we use @Value '>-->
+<!--        <If we Don't Want to Inject Values Like This we use @Value >-->
 <!--        <property name="name" value="${stud.name}"/>-->
 <!--        <property name="course" value="${stud.course}"/>-->
 <!--        <property name="hobby" value="${stud.hobby}"/>-->
     </bean>
+
+
+
+<!--    <+++++++++++++++ This Code is For Using Component Annotation++++++++++++++++>-->
+
+<!--    <We are Not Using Any XML File In This While we Use Component Annotation>-->
+<!--    <Without Using Below COnfig line we can perfom configuration using the java only>-->
+<!--    <context:component-scan base-package="com.spring_core.Component"/>-->
 
 </beans>
 
