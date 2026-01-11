@@ -18,11 +18,16 @@ public class Test {
 
         //This method is Alternative of the context.close()
         //This Also Close IoC Container the @PreDestroy Is Implemented
-        // ********** Mostly Asked in INTERVIEWS About it ***************
-        context.registerShutdownHook();
+
 
         // When we Close IoC Container the @PreDestroy Is Implemented
 //        context.close();
+
+        // ********** Mostly Asked in INTERVIEWS About it ***************
+        context.registerShutdownHook();
+        // Note** After registerShutDown, We can STILL Create Methods from PatientsDAO Class
+        // OR this method will also work when main() method ends
+         pat.selectAllRows();
 
 
     }
