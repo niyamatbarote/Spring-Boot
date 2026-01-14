@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+<!--       <++++++++++ In Bean Life Cycle Using XML We can Create Default Method Name to Make it @PreDestroy & @PostConstruct>-->
+<!--    default-init-method="init" -->
+<!--       default-destroy-method="destroy"-->
+
+
+
+    <!--< ++++++++++++ This code is For Inversion of Control (IoC) ++++++++++++++++>-->
+    <!--    < Below, Object of Airtel/Vodafone (class) will be created, named as airtel/vodafone(id) >-->
+    <bean id = "sim" class = "com.spring_core.IoC.Vodafone" />
+    <!--    <bean id = "vodafone" class = "com.spring_core.IoC.Vodafone" ></bean>-->
+
+<!--    <++++++++++++++++This code is for Dependency Injection (DI)++++++++++++++++>-->
+<!--    <Setter Must be there in Student(class) order to Inject the Value in Student Class>-->
+<!--    <///////////////Setter Method of Injecting ///////////>-->
+<!--    <bean id = "std" class = "com.spring_core.DI.Student">-->
+<!--        <property name="studName" value="Niyamat Barote" />-->
+<!--        <property name="rollNum" value="24" />-->
+<!--    </bean>-->
+<!--    <bean id = "mahemud" class = "com.spring_core.DI.Student">-->
+<!--        <property name="studName" value="Mahemud Borote" />-->
+<!--        <property name="rollNum" value="4" />-->
+<!--    </bean>-->
+<!--    </////////////// Constructor Method of Injecting /////////////////>-->
+    <bean id = "std" class = "com.spring_core.DI.Student">
+        <constructor-arg name="studName" value="Niyamat Barote"/>
+        <constructor-arg name="rollNum" value="12" />
+    </bean>
+    <bean id = "roll" class = "com.spring_core.DI.Student">
+        <constructor-arg name="rollNum" value="100" type="int"/>
+    </bean>
+    <bean id = "name" class = "com.spring_core.DI.Student">
+        <constructor-arg name="studName" value="Mahemud Borote" type="java.lang.String"/>
+    </bean>
+
+
+
+<!--    <++++++++++++++The Following code is for Dependency Injection (injecting Objects)++++++++++++ >-->
+<!--    <This will make object once and use as per needed (thus only one Constructor will be created) >-->
+    <bean id = "commonChit" class="com.spring_core.DI.Injecting_Objects.MathChit"    />
+<!--    <Injecting into the Object>-->
+    <bean id = "obj" class="com.spring_core.DI.Injecting_Objects.StudentCheat" >
+<!--        <Injecting for myChit Obj>-->
+        <property name="myChit" ref="commonChit"/>
+<!--        <Injecting for id integer>-->
+        <property name="id" value="1001"/>
+    </bean>
+
+<!--    <For Student2>-->
+    <bean id="stud2" class="com.spring_core.DI.Injecting_Objects.Student2">
+<!--        <This method makes us to make the objects again and again>-->
+<!--        <property name="myChit">-->
+<!--            <bean class="com.spring_core.DI.Injecting_Objects.MathChit"/>-->
+<!--        </property>-->
+
+<!--        <Standard (Latest method to do it)>-->
+        <property name="myChit" ref="commonChit"/>
+    </bean>
+
+
+<!--    <++++++++++++++++This is For the Autowired Section++++++++++++++++++++>-->
+<!--    <Autowire By Name (Object Name && id MUST be same )>-->
+<!--    <bean id="myHeart" class="com.spring_core.Autowired.Heart"/>-->
+<!--    <bean id="hum" class="com.spring_core.Autowired.Human" autowire="byName"></bean>-->
+
+<!--<Autowire Be Type (class Name should be same_)>-->
+<!--    <bean id="abcdef" class="com.spring_core.Autowired.Heart"/>-->
+<!--    <bean id="hum" class="com.spring_core.Autowired.Human" autowire="byType"></bean>-->
+
+<!--    <NOTE** If we want to use (autowire="constructor") we need to make the constructor of that Obj>-->
+
+    <!--    <This will make the configuration work from java @Autowired to xml file>-->
+    <!--    <MUST Use This While WE Use ANy @ ANNOTATIONS >-->
+    <context:annotation-config />
+
+    <bean id="myHeart" class="com.spring_core.Autowired.Heart">
+        <property name="nameOfAnimal" value="Human"/>
+        <property name="numOfHearts" value="1"/>
+    </bean>
+
+    <bean id="octopusHeart" class="com.spring_core.Autowired.Heart">
+        <property name="nameOfAnimal" value="Octopus"/>
+        <property name="numOfHearts" value="3"/>
+    </bean>
+
+    <bean id="hum" class="com.spring_core.Autowired.Human" />
+
+
+
+<!--    <++++++++++++++This Code for the PROPERTIES FILE +++++++++++++++++++ >-->
+
+<!--    < Configuring the myStudent.propery file >-->
+    <context:property-placeholder location="myStudent.property"/>
+
+    <bean id="niyamat" class="com.spring_core.propertiesFile.MyStudent">
+<!--        <If we Don't Want to Inject Values Like This we use @Value >-->
+<!--        <property name="name" value="${stud.name}"/>-->
+<!--        <property name="course" value="${stud.course}"/>-->
+<!--        <property name="hobby" value="${stud.hobby}"/>-->
+    </bean>
+
+
+
+<!--    <+++++++++++++++ This Code is For Using Component Annotation++++++++++++++++>-->
+
+<!--    <We are Not Using Any XML File In This While we Use Component Annotation>-->
+<!--    <Without Using Below COnfig line we can perfom configuration using the java only>-->
+<!--    <context:component-scan base-package="com.spring_core.Component"/>-->
+
+
+
+<!--    < +++++++++++++ This code is for BeansLifecycle ++++++++++++>-->
+
+<!--    <Using Classic Way>-->
+<!--    < Using "init-method" & "Destroy-method" we can ByPass @PostConstruct & PreDestroy Annotation >-->
+    <bean id="patients" class="com.spring_core.beanLifeCycle.PatientsDAO" init-method="init" destroy-method="destroy">
+        <property name="driver" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://127.0.0.1:3306/myHospital"/>
+        <property name="username" value="root"/>
+        <property name="password" value="Niyamat@2005"/>
+    </bean>
+
+</beans>
+
+
+
+
+
+
+
