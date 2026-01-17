@@ -1,5 +1,7 @@
 package myHome.controllers;
 
+import java.nio.channels.Pipe.SourceChannel;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -10,6 +12,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 @RequestMapping("/boy")
 public class BrotherController {
+
+    private final SisterController sisterController;
+
+    BrotherController(SisterController sisterController) {
+        this.sisterController = sisterController;
+    }
 	
 	@ResponseBody
 	@RequestMapping("/bat")
@@ -22,6 +30,9 @@ public class BrotherController {
 	@ResponseBody
 	@RequestMapping("/book")
 	public String book() {
+		// Sout thing will be printed on "console" 
+		// ** only when we hit the /book link
+		System.out.println("This is Book Method");
 		return "Just Take My Book and Don't Return..!!"	;
 	}
 
