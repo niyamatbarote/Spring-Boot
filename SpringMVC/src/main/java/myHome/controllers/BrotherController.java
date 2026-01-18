@@ -19,10 +19,11 @@ public class BrotherController {
         this.sisterController = sisterController;
     }
 	
-	@ResponseBody
+//    if we Use @ResponseBody then we will get only Strnig Not THe Definit Directed Folder
+//	@ResponseBody
 	@RequestMapping("/bat")
 	public String giveBat() {
-		return "Here is Cricket Bat For YOu ..!!";
+		return "boyBat";
 	}
 	
 //	We can Make many methods in same class with different urls with different actions --

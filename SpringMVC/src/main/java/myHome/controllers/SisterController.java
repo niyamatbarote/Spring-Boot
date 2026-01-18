@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class SisterController {
 	
 	
-	
 	@ResponseBody
 	@RequestMapping("/makeupkit")
 	public String giveKit() {
@@ -16,3 +15,4 @@ public class SisterController {
 	}
 
 }
+ 	

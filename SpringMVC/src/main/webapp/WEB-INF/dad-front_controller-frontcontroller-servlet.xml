@@ -14,4 +14,11 @@
  -->        
         <context:component-scan base-package="myHome.controllers"></context:component-scan>
         
-        </beans>
+<!--         <Physical Address is Resolved By View Resolver>
+ -->        
+ 		<!-- <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        	<property name="prefix" value="/WEB-INF/view/"></property>
+        	<property name="suffix" value=".jsp"></property>
+        </bean> -->
+        
+        </beans>	
