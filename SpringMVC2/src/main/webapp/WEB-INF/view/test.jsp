@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Hello Test Run</title>
+<title>myWeb</title>
 </head>
 <body>
-<h1>View Resolver is working ..!!</h1>
+<h1>Testing Succes..!!</h1>
 </body>
 </html>

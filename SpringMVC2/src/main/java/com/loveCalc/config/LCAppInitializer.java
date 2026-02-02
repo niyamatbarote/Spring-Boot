@@ -10,7 +10,7 @@ public class LCAppInitializer extends AbstractAnnotationConfigDispatcherServletI
 	@Override
 	protected Class<?> @Nullable [] getRootConfigClasses() {
 		// TODO Auto-generated method stub
-//		Class[] array1= {TestController.class};
+//		Class[] array1= [TestController.class];
 		return null;
 	}
 
@@ -18,14 +18,14 @@ public class LCAppInitializer extends AbstractAnnotationConfigDispatcherServletI
 	protected Class<?> @Nullable [] getServletConfigClasses() {
 		// Configuring Servlet Class Location
 		Class[] array = {ApplicationConfig.class};
-		return null;
+		return array;
 	}
 
 	@Override
 	protected String[] getServletMappings() {
 		// Servlet Mapping
 		String[] arr = {"/"};
-		return null;
+		return arr;
 	}
 
 }

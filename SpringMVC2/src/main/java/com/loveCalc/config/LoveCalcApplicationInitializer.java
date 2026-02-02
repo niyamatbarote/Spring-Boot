@@ -10,6 +10,8 @@ import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.ServletRegistration;
 
+// The LCAppInitializer.java is ALTERNATIVE For THIS Class/.JAVA
+
 //public class LoveCalcApplicationInitializer implements WebApplicationInitializer {
 //
 //	@Override
