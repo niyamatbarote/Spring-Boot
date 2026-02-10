@@ -1,0 +1,4 @@
+com\controllers\LCAppController.class
+com\loveCalc\config\ApplicationConfig.class
+com\loveCalc\config\LCAppInitializer.class
+com\controllers\TestController.class

@@ -1,4 +1,3 @@
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -108,15 +107,13 @@
     <div class="container">
         <h1>❤️ Love Calculator ❤️</h1>
 
-<!-- <model Attribute is important here> -->
-        <form:form action="process" method="get" modelAttribute="info">
+        <form action="process" method="get">
             <div class="input-box">
-            <!-- < Mkae sure you set THE PATH> -->
-                <form:input type="text" path="yourName" placeholder="Your Name" />
+                <input type="text" name="yourName" placeholder="Your Name" required>
             </div>
 
             <div class="input-box">
-                <form:input type="text" path="crushName" placeholder="Crush Name" />
+                <input type="text" name="crushName" placeholder="Crush Name" required>
             </div>
 
             <div class="terms">
@@ -127,7 +124,7 @@
             <button type="submit">Calculate</button>
 
             <div class="result"></div>
-        </form:form>
+        </form>
     </div>
 
 </body>
