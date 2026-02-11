@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
+import com.api.SIgnInDTO;
 import com.api.UserInfoDTO;
 
 @Controller
@@ -62,5 +63,13 @@ public class LCAppController {
 		System.out.println("crush name is : "+ dto.getCrushName());
 		
 		return "result";
+	}
+	
+	@RequestMapping("/signin")
+	public String signUp(@ModelAttribute("in") SIgnInDTO sign) {
+		
+		System.out.println(sign.getUsername());
+		System.out.println(sign.getPass());
+		return "signin";
 	}
 }
