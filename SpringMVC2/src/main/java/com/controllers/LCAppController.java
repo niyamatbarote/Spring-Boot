@@ -29,7 +29,7 @@ public class LCAppController {
 		// then we will send it to the result page
 		
 //		UserInfoDTO dto = new UserInfoDTO();
-//		md.addAttribute("info", dto);                                        
+//		md.addAttribute("info", dto);         s                                
 		
 		// The following code is replaced OR Altered using this line of code :
 		// (@ModelAttribute("info") UserInfoDTO dto
