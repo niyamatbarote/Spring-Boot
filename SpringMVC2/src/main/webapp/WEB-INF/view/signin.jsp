@@ -10,7 +10,7 @@
 <body>
 <div class="container">
 
-	<form:form action="process" method="get" modelAttribute="in">
+	<form:form action="signup" method="get" modelAttribute="in">
 	
 	
 	<div>

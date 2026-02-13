@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import com.api.SIgnInDTO;
+import com.api.SignUpDTO;
 import com.api.UserInfoDTO;
 
 @Controller
@@ -72,4 +73,11 @@ public class LCAppController {
 		System.out.println(sign.getPass());
 		return "signin";
 	}
+	
+	@RequestMapping("/signup")
+	public String signUp(@ModelAttribute("up") SignUpDTO signup) {
+		return "signup";
+	}
+	
+	
 }
