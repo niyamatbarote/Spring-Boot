@@ -79,5 +79,10 @@ public class LCAppController {
 		return "signup";
 	}
 	
+	@RequestMapping("/regsucc")
+	public String regSuccess(@ModelAttribute("reg") SignUpDTO signup ) {
+		return "regsucc";
+	}
+	
 	
 }

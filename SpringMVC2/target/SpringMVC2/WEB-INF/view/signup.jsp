@@ -128,21 +128,21 @@ button:hover{
 
     <h1>❤️ Sign Up ❤️</h1>
 
-    <form:form method="get" action="/regsucc" modelAttribute="up">
+    <form:form action="/signin" modelAttribute="up">
 
         <div class="form-group">
             <label>Full Name</label>
-            <form:input path="user" placeholder="Enter your name" required="required" />
+            <form:input path="user"  placeholder="Enter your name" required/>
         </div>
 
         <div class="form-group">
             <label>Username</label>
-            <form:input path="username" type="text" placeholder="Choose username" required="required"/>
+            <form:input path="username" type="text" placeholder="Choose username" required/>
         </div>
 
         <div class="form-group">
             <label>Password</label>
-            <form:input path="password" type="password" placeholder="Enter password" required="required"/>
+            <form:input path="password" type="password" placeholder="Enter password" required/>
         </div>
 
         <div class="form-group">
@@ -158,22 +158,18 @@ button:hover{
         <div class="form-group">
             <label>Hobbies</label>
             <div class="options">
-            <form:checkbox path="hobbies" value="Cricket"/> Cricket
-			<form:checkbox path="hobbies" value="Reading"/> Reading
-			<form:checkbox path="hobbies" value="Travel"/> Travel
-			<form:checkbox path="hobbies" value="Programming"/> Programming
-                <%-- <label><form:input path="hobbies" type="checkbox"/> Cricket</label>
+                <label><form:input path="hobbies" type="checkbox"/> Cricket</label>
                 <label><form:input path="hobbies" type="checkbox"/> Reading</label>
                 <label><form:input path="hobbies" type="checkbox"/> Travel</label>
-                <label><form:input path="hobbies" type="checkbox"/> Programming</label> --%>
+                <label><form:input path="hobbies" type="checkbox"/> Programming</label>
             </div>
         </div>
 
         <div class="form-group">
             <label>Gender</label>
             <div class="options">
-                <form:radiobutton path="gender" value="Male"/> Male
-				<form:radiobutton path="gender" value="Female"/> Female
+                <label><form:input path="gender" type="radio" name="gender"/> Male</label>
+                <label><form:input path="gender" type="radio" name="gender"/> Female</label>
             </div>
         </div>
 
