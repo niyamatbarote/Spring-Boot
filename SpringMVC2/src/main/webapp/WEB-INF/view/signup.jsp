@@ -128,7 +128,7 @@ button:hover{
 
     <h1>❤️ Sign Up ❤️</h1>
 
-    <form:form method="get" action="/regsucc" modelAttribute="up">
+    <form:form method="get" action="regsucc" modelAttribute="up">
 
         <div class="form-group">
             <label>Full Name</label>

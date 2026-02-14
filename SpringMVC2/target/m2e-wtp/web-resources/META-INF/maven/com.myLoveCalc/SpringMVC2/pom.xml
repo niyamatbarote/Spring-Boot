@@ -49,6 +49,24 @@
     <scope>compile</scope>
 </dependency>
 
+<!--< Dependency for .jsp JSTL>-->
+<!-- JSTL API 3.0 (Jakarta EE 10) -->
+<dependency>
+    <groupId>jakarta.servlet.jsp.jstl</groupId>
+    <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
+    <version>3.0.0</version>
+</dependency>
+
+<!-- JSTL Implementation (Required for the tags to actually work) -->
+<dependency>
+    <groupId>org.glassfish.web</groupId>
+    <artifactId>jakarta.servlet.jsp.jstl</artifactId>
+    <version>3.0.1</version>
+</dependency>
+
+
+
+
   </dependencies>
   <build>
     <finalName>SpringMVC2</finalName>
