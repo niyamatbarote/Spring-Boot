@@ -74,11 +74,12 @@ public class LCAppController {
 		return "signin";
 	}
 	
+	// Using SignUpDTO class to GET/COLLECT The Data from the VIEW
 	@RequestMapping("/signup")
 	public String signUp(@ModelAttribute("up") SignUpDTO signup) {
 		return "signup";
 	}
-	
+	// Using SignUpDTO class to SEND/SHOW The Data to the VIEW
 	@RequestMapping("/regsucc")
 	public String regSuccess(@ModelAttribute("reg") SignUpDTO signup ) {
 		return "regsucc";
