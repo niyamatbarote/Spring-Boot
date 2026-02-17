@@ -100,6 +100,12 @@
             font-weight: bold;
             color: #333;
         }
+        /* ===== Error Message ===== */
+        .error {
+        	color: red;
+        	position: fixed;
+        	text-align: center;
+        }
     </style>
     
     
@@ -132,14 +138,16 @@
         <h1>❤️ Love Calculator ❤️</h1>
 
 <!-- <model Attribute is important here> -->
-        <form:form action="process" method="get" modelAttribute="info" >
+        <form:form action="process" method="post" modelAttribute="info" >
             <div class="input-box">
             <!-- < Mkae sure you set THE PATH> -->
                 <form:input type="text" path="yourName" placeholder="Your Name" />
+                <form:errors path="yourName"/>
             </div>
 
             <div class="input-box">
                 <form:input type="text" path="crushName" placeholder="Crush Name" />
+                <form:errors path="crushName"/>
             </div>
 
             <div class="terms">

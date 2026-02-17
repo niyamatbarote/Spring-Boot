@@ -104,16 +104,23 @@
     
     
     <!-- <JavaScript Code> -->
+    <!-- < FORM VALIDATION SAMPLE CODE> -->
     <script type="text/javascript">
     	
     function validUserName() {
 		var user = document.getElementById('yourName').value;
+		var crush = document.getElementById('crushName').value;
+		
 		if (user.length < 2) {
-			alert("Ener at least one Char..!!");
+			alert("Ener at least one Character in Your Name..!!");
 			return false;
-		}else {
-			return true;
 		}
+		
+		if (crush.length < 2) {
+			alert("Ener at least one Character in Crush Name..!!");
+			return false;
+		}
+		return true;
 	}
     
     </script>
@@ -125,14 +132,16 @@
         <h1>❤️ Love Calculator ❤️</h1>
 
 <!-- <model Attribute is important here> -->
-        <form:form action="process" method="get" modelAttribute="info" onsubmit="return validUserName">
+        <form:form action="process" method="post" modelAttribute="info" >
             <div class="input-box">
             <!-- < Mkae sure you set THE PATH> -->
                 <form:input type="text" path="yourName" placeholder="Your Name" />
+                <form:errors path="yourName"/>
             </div>
 
             <div class="input-box">
                 <form:input type="text" path="crushName" placeholder="Crush Name" />
+                <form:errors path="crushName"/>
             </div>
 
             <div class="terms">

@@ -1,6 +1,9 @@
 package com.controllers;
 
-import javax.validation.Valid;
+
+import com.loveCalc.config.ApplicationConfig;
+
+import jakarta.validation.Valid;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,13 +20,16 @@ import com.api.UserInfoDTO;
 @Controller
 public class LCAppController {
 
+    private final ApplicationConfig applicationConfig;
+
     private final TestController testController;
 
     private final InternalResourceViewResolver viewResolver;
 
-    LCAppController(InternalResourceViewResolver viewResolver, TestController testController) {
+    LCAppController(InternalResourceViewResolver viewResolver, TestController testController, ApplicationConfig applicationConfig) {
         this.viewResolver = viewResolver;
         this.testController = testController;
+        this.applicationConfig = applicationConfig;
     }
 
 	@RequestMapping("/")
@@ -66,7 +72,7 @@ public class LCAppController {
 		
 		// hasError() has return type of Boolean
 		if (result.hasErrors()) {
-			
+			System.out.println("Error has occured ");
 			return "myApp";
 		}
 		

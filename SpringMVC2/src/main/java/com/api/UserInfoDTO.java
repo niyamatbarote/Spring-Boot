@@ -1,6 +1,7 @@
 package com.api;
 
-import javax.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
 
 // Data Transfer Object (DTO)
 
@@ -9,8 +10,11 @@ import javax.validation.constraints.NotBlank;
 // the transfer of data, eliminating the need to manually extract values from HTTP requests or update UI elements individually.
 public class UserInfoDTO {
 	
-	@NotBlank
+	@NotBlank(message = " * Your Name Cannot be Empty..!")
+	@Min(value = 2, message = " * Enter atleast Two Characters ")
 	private String yourName;
+	@Min(value = 2, message = " * Enter atleast Two Characters ")
+	@NotBlank(message = " * Your Name Cannot be Empty..!")
 	private String crushName;
 	
 	// toString Methods :
@@ -22,7 +26,7 @@ public class UserInfoDTO {
 	// **NOTE** Internally its doing ..:
 	// UserInfoDTO user = new UserInfoDTO();
 	public UserInfoDTO() {
-		System.out.println("User Info DTO is Called using its Constructor ...!!!");
+		
 	}
 
 	// Getter and Setter Methods
