@@ -101,6 +101,29 @@
             color: #333;
         }
     </style>
+    
+    
+    <!-- <JavaScript Code> -->
+    <!-- < FORM VALIDATION SAMPLE CODE> -->
+    <script type="text/javascript">
+    	
+    function validUserName() {
+		var user = document.getElementById('yourName').value;
+		var crush = document.getElementById('crushName').value;
+		
+		if (user.length < 2) {
+			alert("Ener at least one Character in Your Name..!!");
+			return false;
+		}
+		
+		if (crush.length < 2) {
+			alert("Ener at least one Character in Crush Name..!!");
+			return false;
+		}
+		return true;
+	}
+    
+    </script>
 </head>
 
 <body>
@@ -109,7 +132,7 @@
         <h1>❤️ Love Calculator ❤️</h1>
 
 <!-- <model Attribute is important here> -->
-        <form:form action="process" method="get" modelAttribute="info">
+        <form:form action="process" method="get" modelAttribute="info" >
             <div class="input-box">
             <!-- < Mkae sure you set THE PATH> -->
                 <form:input type="text" path="yourName" placeholder="Your Name" />

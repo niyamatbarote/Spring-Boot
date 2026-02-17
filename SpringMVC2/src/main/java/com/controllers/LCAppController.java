@@ -1,7 +1,10 @@
 package com.controllers;
 
+import javax.validation.Valid;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -40,7 +43,7 @@ public class LCAppController {
 	}
 	
 	@RequestMapping("/process") 
-	public String resultPage(@ModelAttribute("info") UserInfoDTO dto) {
+	public String resultPage(@Valid @ModelAttribute("info") UserInfoDTO dto, BindingResult result) {
 		// @RequestParam String yourName,@RequestParam String crushName
 // NOTE **** WE roemoved @RequestParam bcz we needed to create each String Like @RequestParam("userName") for each Value
 // This is not good practice for data like large FROMS thus we created a UserInfoDTO class for This ALTERNATIVE		
@@ -60,8 +63,12 @@ public class LCAppController {
 		// Internally its doing ::::
 		// 1) UserInfoDTO user = new UserInfoDTO();
 		// 2) UserInfoDTO.setYourName("Niyamat");
-		System.out.println("my name is :"+ dto.getYourName());
-		System.out.println("crush name is : "+ dto.getCrushName());
+		
+		// hasError() has return type of Boolean
+		if (result.hasErrors()) {
+			
+			return "myApp";
+		}
 		
 		return "result";
 	}

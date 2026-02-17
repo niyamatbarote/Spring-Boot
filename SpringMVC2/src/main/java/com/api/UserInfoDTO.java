@@ -1,5 +1,7 @@
 package com.api;
 
+import javax.validation.constraints.NotBlank;
+
 // Data Transfer Object (DTO)
 
 // **DATA BINDING** :: In Web MVC (Model-View-Controller), data binding is the process of synchronizing 
@@ -7,8 +9,9 @@ package com.api;
 // the transfer of data, eliminating the need to manually extract values from HTTP requests or update UI elements individually.
 public class UserInfoDTO {
 	
-	private String yourName ="you";
-	private String crushName = "your crush";
+	@NotBlank
+	private String yourName;
+	private String crushName;
 	
 	// toString Methods :
 	@Override

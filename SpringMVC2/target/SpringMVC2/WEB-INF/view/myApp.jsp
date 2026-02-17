@@ -101,6 +101,22 @@
             color: #333;
         }
     </style>
+    
+    
+    <!-- <JavaScript Code> -->
+    <script type="text/javascript">
+    	
+    function validUserName() {
+		var user = document.getElementById('yourName').value;
+		if (user.length < 2) {
+			alert("Ener at least one Char..!!");
+			return false;
+		}else {
+			return true;
+		}
+	}
+    
+    </script>
 </head>
 
 <body>
@@ -109,7 +125,7 @@
         <h1>❤️ Love Calculator ❤️</h1>
 
 <!-- <model Attribute is important here> -->
-        <form:form action="process" method="get" modelAttribute="info">
+        <form:form action="process" method="get" modelAttribute="info" onsubmit="return validUserName">
             <div class="input-box">
             <!-- < Mkae sure you set THE PATH> -->
                 <form:input type="text" path="yourName" placeholder="Your Name" />
