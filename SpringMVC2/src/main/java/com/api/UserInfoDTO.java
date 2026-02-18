@@ -1,5 +1,6 @@
 package com.api;
 
+import jakarta.validation.constraints.AssertTrue;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
@@ -19,6 +20,17 @@ public class UserInfoDTO {
 	@Size(min = 2, max=10, message = " * Enter atleast Two Characters & at Max 10 Char")
 	@NotBlank(message = " * Your Name Cannot be Empty..!")
 	private String crushName;
+	
+	public boolean isTnc() {
+		return tnc;
+	}
+	public void setTnc(boolean tnc) {
+		this.tnc = tnc;
+	}
+	// Terms and Condition CheckBox
+	// @AssertTrue is Used to Make sure That checkBox Must true, else print message
+	@AssertTrue(message = " * You Must Agree Terms and Conditions")
+	private boolean tnc;
 	
 	// toString Methods :
 	@Override

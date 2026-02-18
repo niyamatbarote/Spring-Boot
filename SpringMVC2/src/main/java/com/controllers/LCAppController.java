@@ -75,6 +75,7 @@ public class LCAppController {
 			System.out.println("Error has occured ");
 			return "myApp";
 		}
+		System.out.println(dto.isTnc());
 		
 		return "result";
 	}

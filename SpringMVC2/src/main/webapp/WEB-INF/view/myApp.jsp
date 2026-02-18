@@ -150,8 +150,9 @@
             </div>
 
             <div class="terms">
-                <input type="checkbox" required>
+                <form:checkbox path="tnc" id="cb"/>
                 <label>I agree this is just for Fun 😄</label>
+                <form:errors path="tnc" class="error-red" />
             </div>
 
             <button type="submit">Calculate</button>
