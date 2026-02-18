@@ -101,11 +101,10 @@
             color: #333;
         }
         /* ===== Error Message ===== */
-        .error {
-        	color: red;
-        	position: fixed;
-        	text-align: center;
-        }
+        .error-red {
+            color: red;
+            font-weight: bold; /* optional: makes it stand out */
+            display: block;    /* optional: puts error on a new line */
     </style>
     
     
@@ -142,12 +141,12 @@
             <div class="input-box">
             <!-- < Mkae sure you set THE PATH> -->
                 <form:input type="text" path="yourName" placeholder="Your Name" />
-                <form:errors path="yourName"/>
+                <form:errors path="yourName" class="error-red"/>
             </div>
 
             <div class="input-box">
                 <form:input type="text" path="crushName" placeholder="Crush Name" />
-                <form:errors path="crushName"/>
+                <form:errors path="crushName" class="error-red"/>
             </div>
 
             <div class="terms">

@@ -2,6 +2,7 @@ package com.api;
 
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 
 // Data Transfer Object (DTO)
 
@@ -11,9 +12,11 @@ import jakarta.validation.constraints.NotBlank;
 public class UserInfoDTO {
 	
 	@NotBlank(message = " * Your Name Cannot be Empty..!")
-	@Min(value = 2, message = " * Enter atleast Two Characters ")
+//	@Min(value = 2, message = " * Enter atleast Two Characters ")
+	@Size(min = 2,max=10, message = " * Enter atleast Two Characters & at Max 10 Char")
 	private String yourName;
-	@Min(value = 2, message = " * Enter atleast Two Characters ")
+//	@Min(value = 2, message = " * Enter atleast Two Characters ")
+	@Size(min = 2, max=10, message = " * Enter atleast Two Characters & at Max 10 Char")
 	@NotBlank(message = " * Your Name Cannot be Empty..!")
 	private String crushName;
 	
