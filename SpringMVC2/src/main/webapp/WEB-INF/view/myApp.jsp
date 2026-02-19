@@ -115,7 +115,7 @@
     function validUserName() {
 		var user = document.getElementById('yourName').value;
 		var crush = document.getElementById('crushName').value;
-		
+		boolean term 
 		if (user.length < 2) {
 			alert("Ener at least one Character in Your Name..!!");
 			return false;
@@ -125,6 +125,8 @@
 			alert("Ener at least one Character in Crush Name..!!");
 			return false;
 		}
+		
+		if ()
 		return true;
 	}
     

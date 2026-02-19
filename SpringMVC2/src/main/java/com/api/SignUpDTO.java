@@ -10,8 +10,16 @@ public class SignUpDTO {
 	private String[] hobbies;
 	private String Gender;
 	
+	private CommunicationDTO com;
 	
 	
+	
+	public CommunicationDTO getCom() {
+		return com;
+	}
+	public void setCom(CommunicationDTO com) {
+		this.com = com;
+	}
 	public String getUser() {
 		return user;
 	}
