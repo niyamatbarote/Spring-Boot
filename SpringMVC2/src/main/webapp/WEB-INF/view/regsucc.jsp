@@ -21,6 +21,7 @@
 	</c:forEach>
 	</h1>
  <h1>Your Gender is : ${reg.gender}</h1>
+ <h1> My Email ID is : ${reg.commune.email} </h1>
  </div>
 </body>
 </html>

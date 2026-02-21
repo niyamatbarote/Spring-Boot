@@ -33,7 +33,7 @@ public class LCAppController {
     }
 
 	@RequestMapping("/")
-	public String application(@ModelAttribute("info") UserInfoDTO dto) {
+	public String application(@ModelAttribute("info") UserInfoDTO dto) 	{
 		
 		// Fetch th user Input form the Home page
 		// then we will send it to the result page

@@ -10,15 +10,17 @@ public class SignUpDTO {
 	private String[] hobbies;
 	private String Gender;
 	
-	private CommunicationDTO com;
+	// Using The communcation DTO for Phone and Email only :
+	private CommunicationDTO commune;
 	
 	
 	
-	public CommunicationDTO getCom() {
-		return com;
+	
+	public CommunicationDTO getCommune() {
+		return commune;
 	}
-	public void setCom(CommunicationDTO com) {
-		this.com = com;
+	public void setCommune(CommunicationDTO commune) {
+		this.commune = commune;
 	}
 	public String getUser() {
 		return user;

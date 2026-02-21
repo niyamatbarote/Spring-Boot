@@ -119,6 +119,16 @@ button:hover{
     color:white;
 }
 
+/* Communication Section Title */
+.form-group label:first-child {
+    color:#ff4d6d;
+}
+
+/* Better spacing between sections */
+.form-group + .form-group {
+    margin-top:15px;
+}
+
 </style>
 </head>
 
@@ -176,6 +186,22 @@ button:hover{
 				<form:radiobutton path="gender" value="Female"/> Female
             </div>
         </div>
+        
+        
+        <div class="form-group">
+    <label>Communication Details :</label>
+</div>
+
+ <div class="form-group">
+    <label>Phone</label>
+    <form:input path="commune.contact.phone" type="text" placeholder="Enter phone number" />
+</div>
+
+<div class="form-group">
+    <label>Email</label>
+    <form:input path="commune.email" type="email" placeholder="Enter email address"/>
+</div>
+
 
         <button type="submit">Register</button>
         
