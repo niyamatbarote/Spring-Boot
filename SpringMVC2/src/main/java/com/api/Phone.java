@@ -20,7 +20,7 @@ public class Phone {
 
 	@Override
 	public String toString() {
-		return getCountryCode() + " " + getPhone();
+		return getCountryCode() + "-" + getPhone();
 	}
 
 	public void setPhone(String phone) {

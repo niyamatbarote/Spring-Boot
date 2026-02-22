@@ -91,11 +91,13 @@ public class LCAppController {
 	// Using SignUpDTO class to GET/COLLECT The Data from the VIEW
 	@RequestMapping("/signup")
 	public String signUp(@ModelAttribute("up") SignUpDTO signup) {
+		System.out.println("On SignUp Page");
 		return "signup";
 	}
 	// Using SignUpDTO class to SEND/SHOW The Data to the VIEW
 	@RequestMapping("/regsucc")
 	public String regSuccess(@ModelAttribute("reg") SignUpDTO signup ) {
+		System.out.println("On Sign  UP Success Page");
 		return "regsucc";
 	}
 	
