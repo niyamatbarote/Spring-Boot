@@ -115,7 +115,8 @@
     function validUserName() {
 		var user = document.getElementById('yourName').value;
 		var crush = document.getElementById('crushName').value;
-		boolean term 
+		var terms = document.getElementById("cb");
+		
 		if (user.length < 2) {
 			alert("Ener at least one Character in Your Name..!!");
 			return false;
@@ -126,7 +127,12 @@
 			return false;
 		}
 		
-		if ()
+		if (!cb.checked) {
+			alert("Ener at least one Character in Crush Name..!!");
+			return false;
+		}
+		
+		
 		return true;
 	}
     
@@ -139,7 +145,7 @@
         <h1>❤️ Love Calculator ❤️</h1>
 
 <!-- <model Attribute is important here> -->
-        <form:form action="process" method="post" modelAttribute="info" >
+        <form:form action="process" method="post" modelAttribute="info" onsubmit="return validUserName()" >
             <div class="input-box">
             <!-- < Mkae sure you set THE PATH> -->
                 <form:input type="text" path="yourName" placeholder="Your Name" />
