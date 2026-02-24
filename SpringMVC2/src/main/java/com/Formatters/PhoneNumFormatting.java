@@ -10,9 +10,8 @@ import com.api.Phone;
 public class PhoneNumFormatting implements Formatter<Phone> {
 
 	@Override
-	public String print(Phone object, Locale locale) {
-		// TODO Auto-generated method stub
-		return null;
+	public String print(Phone ph, Locale locale) {
+		return ph.getCountryCode()+"-"+ph.getPhone();
 	}
 
 	@Override

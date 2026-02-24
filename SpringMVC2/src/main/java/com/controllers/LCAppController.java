@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
+import com.api.CommunicationDTO;
+import com.api.Phone;
 import com.api.SIgnInDTO;
 import com.api.SignUpDTO;
 import com.api.UserInfoDTO;
@@ -92,6 +94,17 @@ public class LCAppController {
 	@RequestMapping("/signup")
 	public String signUp(@ModelAttribute("up") SignUpDTO signup) {
 		System.out.println("On SignUp Page");
+		
+		// Load the Saved User Data from DB :
+		Phone ph = new Phone();
+		ph.setCountryCode("91");
+		ph.setPhone("1111111111");
+		
+		CommunicationDTO cdto = new CommunicationDTO();
+		cdto.setContact(ph);	
+		
+		signup.setCommune(cdto);
+		
 		return "signup";
 	}
 	// Using SignUpDTO class to SEND/SHOW The Data to the VIEW

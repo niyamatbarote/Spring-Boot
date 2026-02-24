@@ -100,6 +100,11 @@
             font-weight: bold;
             color: #333;
         }
+        /* ===== Error Message ===== */
+        .error-red {
+            color: red;
+            font-weight: bold; /* optional: makes it stand out */
+            display: block;    /* optional: puts error on a new line */
     </style>
     
     
@@ -110,6 +115,7 @@
     function validUserName() {
 		var user = document.getElementById('yourName').value;
 		var crush = document.getElementById('crushName').value;
+		var terms = document.getElementById("cb");
 		
 		if (user.length < 2) {
 			alert("Ener at least one Character in Your Name..!!");
@@ -120,6 +126,13 @@
 			alert("Ener at least one Character in Crush Name..!!");
 			return false;
 		}
+		
+		if (!cb.checked) {
+			alert("Ener at least one Character in Crush Name..!!");
+			return false;
+		}
+		
+		
 		return true;
 	}
     
@@ -132,21 +145,22 @@
         <h1>❤️ Love Calculator ❤️</h1>
 
 <!-- <model Attribute is important here> -->
-        <form:form action="process" method="post" modelAttribute="info" >
+        <form:form action="process" method="post" modelAttribute="info" onsubmit="return validUserName()" >
             <div class="input-box">
             <!-- < Mkae sure you set THE PATH> -->
                 <form:input type="text" path="yourName" placeholder="Your Name" />
-                <form:errors path="yourName"/>
+                <form:errors path="yourName" class="error-red"/>
             </div>
 
             <div class="input-box">
                 <form:input type="text" path="crushName" placeholder="Crush Name" />
-                <form:errors path="crushName"/>
+                <form:errors path="crushName" class="error-red"/>
             </div>
 
             <div class="terms">
-                <input type="checkbox" required>
+                <form:checkbox path="tnc" id="cb"/>
                 <label>I agree this is just for Fun 😄</label>
+                <form:errors path="tnc" class="error-red" />
             </div>
 
             <button type="submit">Calculate</button>

@@ -14,8 +14,6 @@ public class SignUpDTO {
 	private CommunicationDTO commune;
 	
 	
-	
-	
 	public CommunicationDTO getCommune() {
 		return commune;
 	}
