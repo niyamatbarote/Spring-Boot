@@ -36,7 +36,7 @@ public class ApplicationConfig implements WebMvcConfigurer {
 	
 	@Override
 	public void addFormatters(FormatterRegistry registry) {
-		System.out.println("in Formatter Registry");
+			System.out.println("in Formatter Registry");
 		registry.addFormatter(new PhoneNumFormatting());
 		
 	}
