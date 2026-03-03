@@ -11,15 +11,21 @@ public class SignUpDTO {
 	private String Gender;
 	
 	// Using The communcation DTO for Phone and Email only :
-	private CommunicationDTO commune;
+	private CommunicationDTO commune = new CommunicationDTO();
 	
 	
-	public CommunicationDTO getCommune() {
+public CommunicationDTO getCommune() {
 		return commune;
 	}
 	public void setCommune(CommunicationDTO commune) {
 		this.commune = commune;
 	}
+	//	public CommunicationDTO getCommune() {
+//		return commune;
+//	}
+//	public void setCommune(CommunicationDTO commune) {
+//		this.commune = commune;
+//	}
 	public String getUser() {
 		return user;
 	}

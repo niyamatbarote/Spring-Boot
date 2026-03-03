@@ -25,7 +25,7 @@ public class PhoneNumFormatting implements Formatter<Phone> {
 		String[] splitter = myInfo.split("-");
 		// Check if the User Insert the Country Code or Not :
 		int index = myInfo.indexOf('-');
-		if (index == -1) {
+		if (index < 1) {
 			
 			phone.setCountryCode("91");
 			phone.setPhone(splitter[0]);
