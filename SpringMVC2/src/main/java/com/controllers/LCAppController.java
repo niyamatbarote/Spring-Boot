@@ -109,7 +109,7 @@ public class LCAppController {
 	}
 	// Using SignUpDTO class to SEND/SHOW The Data to the VIEW
 	@RequestMapping("/regsucc")
-	public String regSuccess(@ModelAttribute("reg") SignUpDTO signup ) {
+	public String regSuccess(@Valid @ModelAttribute("reg") SignUpDTO signup,BindingResult result ) {
 		System.out.println("On Sign  UP Success Page");
 		return "regsucc";
 	}

@@ -1,9 +1,14 @@
 package com.api;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
+
 public class Phone {
-	
-	private String countryCode;;
-	
+
+	@NotBlank(message = "Number Cannot be Blank")
+	private String countryCode;
+	@NotBlank(message = "Number Cannot be Blank")
+	@Size(min = 10, message = " * Number Must contain 10 digits" )
 	private String phone;
 
 	public String getCountryCode() {

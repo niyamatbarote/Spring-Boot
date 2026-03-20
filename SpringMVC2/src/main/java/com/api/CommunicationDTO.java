@@ -1,8 +1,11 @@
 package com.api;
 
+import jakarta.validation.constraints.NotBlank;
+
 public class CommunicationDTO {
 	
 	private String email;
+	@NotBlank(message = "Number Cannot be Blank")
 	private Phone contact;
 	
 	
